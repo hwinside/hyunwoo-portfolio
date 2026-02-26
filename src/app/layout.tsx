@@ -9,13 +9,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Hyunwoo Kim — Senior Director, Business Development",
+  title: "Hyunwoo Kim — Senior Director, Business Development at MOLOCO",
   description:
-    "18+ years driving growth at the intersection of advertising, technology, and product innovation.",
+    "20+ years driving growth at the intersection of advertising, technology, and product innovation.",
   openGraph: {
-    title: "Hyunwoo Kim — Senior Director, Business Development",
+    title: "Hyunwoo Kim — Senior Director, Business Development at MOLOCO",
     description:
-      "18+ years driving growth at the intersection of advertising, technology, and product innovation.",
+      "20+ years driving growth at the intersection of advertising, technology, and product innovation.",
     type: "website",
   },
 };
