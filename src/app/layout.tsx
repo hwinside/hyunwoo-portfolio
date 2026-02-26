@@ -9,14 +9,57 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Hyunwoo Kim — Senior Director, Business Development at MOLOCO",
+  metadataBase: new URL("https://www.abouthyunwookim.com"),
+  title: {
+    default: "Hyunwoo Kim — Senior Director, Business Development at MOLOCO",
+    template: "%s | Hyunwoo Kim",
+  },
   description:
-    "20+ years driving growth at the intersection of advertising, technology, and product innovation.",
+    "20+ years driving growth at the intersection of advertising, technology, and product innovation. AI-powered Commerce Media leader.",
+  keywords: [
+    "Hyunwoo Kim", "MOLOCO", "Commerce Media", "Retail Media", "AdTech",
+    "Business Development", "Product Management", "AI Advertising",
+    "DSP", "Digital Marketing", "김현우",
+  ],
+  authors: [{ name: "Hyunwoo Kim" }],
+  creator: "Hyunwoo Kim",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.abouthyunwookim.com",
+  },
   openGraph: {
     title: "Hyunwoo Kim — Senior Director, Business Development at MOLOCO",
     description:
-      "20+ years driving growth at the intersection of advertising, technology, and product innovation.",
+      "20+ years driving growth at the intersection of advertising, technology, and product innovation. AI-powered Commerce Media leader.",
+    url: "https://www.abouthyunwookim.com",
+    siteName: "Hyunwoo Kim Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Hyunwoo Kim — Senior Director, Business Development at MOLOCO",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hyunwoo Kim — Senior Director, Business Development at MOLOCO",
+    description:
+      "20+ years driving growth at the intersection of advertising, technology, and product innovation.",
+    images: ["/og-image.png"],
   },
 };
 
