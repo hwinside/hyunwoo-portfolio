@@ -1,0 +1,20 @@
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<h1>404 Not Found</h1>
+<ul>
+<li>Code: NoSuchKey</li>
+<li>Message: The specified key does not exist.</li>
+<li>Key: assets/images/aiesec_blue_logo.png</li>
+<li>RequestId: 930DH56TM4J4D8QK</li>
+<li>HostId: f/27cV36rqtspcovFDylByydFVNiULCH8O7YiOqJBaUxG/D0iibXqpXlbVUxw7/uyTFiw3d4f08=</li>
+</ul>
+<h3>An Error Occurred While Attempting to Retrieve a Custom Error Document</h3>
+<ul>
+<li>Code: NoSuchKey</li>
+<li>Message: The specified key does not exist.</li>
+<li>Key: index.html</li>
+</ul>
+<hr/>
+</body>
+</html>
