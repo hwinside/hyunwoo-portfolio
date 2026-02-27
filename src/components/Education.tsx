@@ -70,7 +70,7 @@ export default function Education() {
                 </div>
                 <div>
                   <p className="text-white font-medium">
-                    {language === "kr" ? "S-ONE 설립" : "Founded S-ONE"}
+                    {language === "kr" ? "경영전략학회 S-ONE 설립" : "Founded S-ONE"}
                   </p>
                   <p className="text-sm text-white/40 mt-1">
                     {language === "kr" ? "경영 전략 학술 동아리" : "Academic club for business strategy"}
