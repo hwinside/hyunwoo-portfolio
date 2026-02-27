@@ -2,10 +2,12 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Education() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { language } = useLanguage();
 
   return (
     <section id="education" ref={ref} className="relative py-32 sm:py-40 bg-black">
@@ -18,12 +20,22 @@ export default function Education() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="text-blue-400/80 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-            Education
+            {language === "kr" ? "학력" : "Education"}
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-            Foundation
-            <br />
-            <span className="text-white/40">built on leadership.</span>
+            {language === "kr" ? (
+              <>
+                리더십 위에
+                <br />
+                <span className="text-white/40">세운 기반.</span>
+              </>
+            ) : (
+              <>
+                Foundation
+                <br />
+                <span className="text-white/40">built on leadership.</span>
+              </>
+            )}
           </h2>
         </motion.div>
 
@@ -41,11 +53,11 @@ export default function Education() {
                 </div>
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                    Sungkyunkwan University
+                    {language === "kr" ? "성균관대학교" : "Sungkyunkwan University"}
                   </h3>
                   <p className="text-lg text-white/50 mt-1">SKKU</p>
                   <p className="text-white/60 font-medium mt-3">
-                    BBA, Business Administration
+                    {language === "kr" ? "경영학 학사" : "BBA, Business Administration"}
                   </p>
                 </div>
               </div>
@@ -57,9 +69,11 @@ export default function Education() {
                   <img src="/logos/sone.jpg" alt="S-ONE" className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <p className="text-white font-medium">Founded S-ONE</p>
+                  <p className="text-white font-medium">
+                    {language === "kr" ? "S-ONE 설립" : "Founded S-ONE"}
+                  </p>
                   <p className="text-sm text-white/40 mt-1">
-                    Academic club for business strategy
+                    {language === "kr" ? "경영 전략 학술 동아리" : "Academic club for business strategy"}
                   </p>
                 </div>
               </div>
@@ -69,9 +83,11 @@ export default function Education() {
                   <img src="/logos/aiesec.jpg" alt="AIESEC" className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <p className="text-white font-medium">President of AIESEC</p>
+                  <p className="text-white font-medium">
+                    {language === "kr" ? "AIESEC 회장" : "President of AIESEC"}
+                  </p>
                   <p className="text-sm text-white/40 mt-1">
-                    International leadership organization
+                    {language === "kr" ? "국제 리더십 기구" : "International leadership organization"}
                   </p>
                 </div>
               </div>

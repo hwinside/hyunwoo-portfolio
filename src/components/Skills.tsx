@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const skills = [
   "Mobile Advertising",
@@ -16,6 +17,7 @@ const skills = [
 export default function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { language } = useLanguage();
 
   return (
     <section id="skills" ref={ref} className="relative py-32 sm:py-40 bg-[#0a0a0a]">
@@ -28,12 +30,22 @@ export default function Skills() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="text-blue-400/80 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-            Expertise
+            {language === "kr" ? "전문 분야" : "Expertise"}
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-            Core
-            <br />
-            <span className="text-white/40">competencies.</span>
+            {language === "kr" ? (
+              <>
+                핵심
+                <br />
+                <span className="text-white/40">역량.</span>
+              </>
+            ) : (
+              <>
+                Core
+                <br />
+                <span className="text-white/40">competencies.</span>
+              </>
+            )}
           </h2>
         </motion.div>
 

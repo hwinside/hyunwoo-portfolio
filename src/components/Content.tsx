@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const contents = [
   {
@@ -101,6 +102,7 @@ export default function Content() {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true, margin: "-100px" });
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { language } = useLanguage();
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -126,12 +128,22 @@ export default function Content() {
         >
           <div>
             <p className="text-blue-400/80 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-              Content
+              {language === "kr" ? "콘텐츠" : "Content"}
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-              Talks, interviews
-              <br />
-              <span className="text-white/40">& publications.</span>
+              {language === "kr" ? (
+                <>
+                  강연, 인터뷰
+                  <br />
+                  <span className="text-white/40">& 기고.</span>
+                </>
+              ) : (
+                <>
+                  Talks, interviews
+                  <br />
+                  <span className="text-white/40">& publications.</span>
+                </>
+              )}
             </h2>
           </div>
           {/* Navigation arrows */}

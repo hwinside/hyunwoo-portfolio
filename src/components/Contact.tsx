@@ -2,10 +2,12 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { language } = useLanguage();
 
   return (
     <section id="contact" ref={ref} className="relative py-32 sm:py-40 bg-black">
@@ -18,14 +20,15 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="text-blue-400/80 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-            Contact
+            {language === "kr" ? "연락처" : "Contact"}
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-            Let&apos;s connect.
+            {language === "kr" ? "연락하기." : "Let\u0027s connect."}
           </h2>
           <p className="mt-6 text-lg text-white/40 max-w-xl mx-auto font-light">
-            Interested in discussing partnerships, opportunities, or the future
-            of AdTech and commerce media.
+            {language === "kr"
+              ? "파트너십, 새로운 기회, 또는 AdTech과 Commerce Media의 미래에 대해 이야기하고 싶으시다면 연락해 주세요."
+              : "Interested in discussing partnerships, opportunities, or the future of AdTech and commerce media."}
           </p>
         </motion.div>
 
@@ -54,7 +57,7 @@ export default function Contact() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
-              Email
+              {language === "kr" ? "이메일" : "Email"}
             </a>
             <a
               href="https://facebook.com/hwinside"

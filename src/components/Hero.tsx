@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
+  const { language } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Animated gradient background */}
@@ -60,7 +63,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl sm:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[1.05]"
           >
-            Hyunwoo Kim
+            {language === "kr" ? "김현우" : "Hyunwoo Kim"}
           </motion.h1>
 
           <motion.p
@@ -69,8 +72,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="mt-8 text-lg sm:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed font-light"
           >
-            20+ years driving growth at the intersection of advertising,
-            technology, and product innovation.
+            {language === "kr"
+              ? "광고, 기술, 제품의 교차점에서 20년 넘게 일해 왔습니다."
+              : "20+ years driving growth at the intersection of advertising, technology, and product innovation."}
           </motion.p>
 
           <motion.div
@@ -83,7 +87,7 @@ export default function Hero() {
               href="#about"
               className="group inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
             >
-              <span>Scroll to explore</span>
+              <span>{language === "kr" ? "스크롤하여 탐색" : "Scroll to explore"}</span>
               <motion.span
                 animate={{ y: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
