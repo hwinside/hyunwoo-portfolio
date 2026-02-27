@@ -37,7 +37,7 @@ const experiences: ExperienceItem[] = [
         description: [
           { heading: { en: "", kr: "" }, items: [
             { en: "Founding member of Moloco Commerce Media — built the business from the ground up, revolutionizing e-commerce advertising with an LLM-based personalization engine", kr: "Moloco Commerce Media 창립 멤버로서 비즈니스를 처음부터 함께 만들어 왔으며, LLM 기반 개인화 엔진을 활용한 이커머스 광고 사업을 구축" },
-            { en: "Closed 15 commerce media deals in Korea — accounting for over 50% of the total client portfolio — establishing MOLOCO as the dominant player in the Korean retail media market", kr: "한국에서 15건의 Commerce Media 딜을 클로즈하며 전체 클라이언트 포트폴리오의 50% 이상을 확보, 한국 리테일 미디어 시장에서 MOLOCO의 성장에 기여" },
+            { en: "Closed 15 commerce media deals in Korea — accounting for over 50% of the total client portfolio — establishing MOLOCO as the dominant player in the Korean retail media market", kr: "한국에서 15건의 Commerce Media 딜을 클로즈하며 전체 클라이언트 포트폴리오의 50% 이상을 확보, 한국 리테일 미디어 시장에서 MOLOCO의 성장에 기여, 0에서 시작하여 2,200억 규모로까지 사업 성장" },
             { en: "Delivered thought leadership at major conferences including DMS (Digital Marketing Summit) and Max Summit, leading multiple sessions on the future of retail media", kr: "DMS(Digital Marketing Summit), Max Summit 등 주요 컨퍼런스에서 리테일 미디어에 대한 세션 다수 진행" },
           ]},
         ],

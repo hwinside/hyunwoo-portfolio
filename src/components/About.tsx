@@ -11,9 +11,9 @@ export default function About() {
 
   const stats = language === "kr"
     ? [
-        { number: "20+", label: "경력" },
+        { number: "20+", label: "경력연수" },
         { number: "4", label: "커리어 트랙:\nENG · AE · PM · BizDev" },
-        { number: "#8", label: "MOLOCO 최장기 근속\n(800명 이상 중)" },
+        { number: "#8", label: "MOLOCO 근속연수 기준\n8번째 장기 근속 (800명 이상 중)" },
         { number: "APAC", label: "글로벌 활동 범위" },
       ]
     : [
@@ -41,9 +41,9 @@ export default function About() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
             {language === "kr" ? (
               <>
-                AdTech 업계의
+                광고와 기술, 제품의 교차점에서
                 <br />
-                <span className="text-white/40">걸어온 길.</span>
+                <span className="text-white/40">다양한 고객을 만나오며.</span>
               </>
             ) : (
               <>

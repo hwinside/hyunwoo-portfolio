@@ -84,7 +84,7 @@ export default function Education() {
                 </div>
                 <div>
                   <p className="text-white font-medium">
-                    {language === "kr" ? "AIESEC 회장" : "President of AIESEC"}
+                    {language === "kr" ? "AIESEC 성균관대 지부 회장" : "President of AIESEC"}
                   </p>
                   <p className="text-sm text-white/40 mt-1">
                     {language === "kr" ? "국제 리더십 기구" : "International leadership organization"}

@@ -23,7 +23,7 @@ export default function Contact() {
             {language === "kr" ? "연락처" : "Contact"}
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-            {language === "kr" ? "연락하기." : "Let\u0027s connect."}
+            {language === "kr" ? "언제나 열려있습니다." : "Let\u0027s connect."}
           </h2>
           <p className="mt-6 text-lg text-white/40 max-w-xl mx-auto font-light">
             {language === "kr"
