@@ -60,7 +60,7 @@ export default function Interests() {
   const interest = INTERESTS[current];
 
   return (
-    <section id="interests" className="py-24 sm:py-32">
+    <section id="interests" className="relative py-24 sm:py-32 bg-black">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         {/* Section header */}
         <motion.div
@@ -73,7 +73,7 @@ export default function Interests() {
           <p className="text-blue-400/80 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
             Interests
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
             Things that keep me<br />inspired outside of work.
           </h2>
         </motion.div>
@@ -87,7 +87,7 @@ export default function Interests() {
           className="relative mx-auto max-w-2xl"
         >
           {/* Image container */}
-          <div className="relative aspect-[9/16] sm:aspect-[3/4] overflow-hidden rounded-3xl bg-black shadow-lg">
+          <div className="relative aspect-[9/16] sm:aspect-[3/4] overflow-hidden rounded-3xl bg-neutral-900 shadow-lg">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={current}
@@ -147,8 +147,8 @@ export default function Interests() {
                 onClick={() => goTo(i)}
                 className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
                   i === current
-                    ? "bg-neutral-900 ring-2 ring-neutral-400 scale-110"
-                    : "bg-neutral-100 hover:bg-neutral-200"
+                    ? "bg-white ring-2 ring-blue-400 scale-110"
+                    : "bg-white/10 hover:bg-white/20"
                 }`}
               >
                 <span className="text-lg">{item.emoji}</span>
