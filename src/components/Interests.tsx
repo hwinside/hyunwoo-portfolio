@@ -27,23 +27,28 @@ export default function Interests() {
   const [direction, setDirection] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const startTimer = () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setDirection(1);
-      setCurrent((prev) => (prev + 1) % INTERESTS.length);
-    }, 4000);
+  const goNext = () => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % INTERESTS.length);
+  };
+
+  const startImageTimer = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(goNext, 5000);
   };
 
   useEffect(() => {
-    startTimer();
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, []);
+    // 사진인 경우만 타이머 (영상은 onEnded로 처리)
+    const item = INTERESTS[current];
+    if (!item.video) {
+      startImageTimer();
+    }
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+  }, [current]);
 
   const goTo = (index: number) => {
     setDirection(index > current ? 1 : -1);
     setCurrent(index);
-    startTimer();
   };
 
   const variants = {
@@ -99,8 +104,8 @@ export default function Interests() {
                     src={interest.video}
                     autoPlay
                     muted
-                    loop
                     playsInline
+                    onEnded={goNext}
                     className="h-full w-full object-cover"
                   />
                 ) : (
