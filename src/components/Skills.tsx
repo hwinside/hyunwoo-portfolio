@@ -39,7 +39,7 @@ export default function Skills() {
             Skills
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-            What I bring<br />to the table.
+            What I bring<br /><span class="text-neutral-400">to the table.</span>
           </h2>
         </motion.div>
 
