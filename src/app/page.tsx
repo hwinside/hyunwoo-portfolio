@@ -7,6 +7,7 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Content from "@/components/Content";
+import Interests from "@/components/Interests";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <Experience />
         <Content />
         <Education />
+        <Interests />
         <Contact />
       </main>
     </LanguageProvider>
