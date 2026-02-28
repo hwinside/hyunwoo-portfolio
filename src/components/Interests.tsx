@@ -22,7 +22,7 @@ const INTERESTS: Interest[] = [
   { title: "LG Twins", emoji: "⚾", image: "/interests/lgtwins.jpg", video: "/interests/lgtwins.mp4" },
   { title: "Dining", emoji: "🍽️", image: "/interests/dining.jpg", video: "/interests/dining.mp4" },
   { title: "Golden State Warriors", emoji: "🏀", image: "/interests/warriors.jpg", video: "/interests/warriors.mp4" },
-  { title: "A Wild Challenge", titleKr: "무모한 도전", emoji: "🔥", image: "/interests/wild-challenge.jpg", video: "/interests/wild-challenge.mp4" },
+  { title: "A Wild Challenge", emoji: "🔥", image: "/interests/wild-challenge.jpg", video: "/interests/wild-challenge.mp4" },
 ];
 
 export default function Interests() {
