@@ -6,19 +6,23 @@ import { motion, useInView } from "framer-motion";
 const SKILLS = [
   {
     category: "Sales & GTM",
-    items: "Enterprise Sales · Consultative Selling · ABM · Pipeline Management · Contract Negotiation · C-Level Engagement · Public Speaking",
+    icon: "🎯",
+    items: ["Enterprise Sales", "Consultative Selling", "ABM", "Pipeline Management", "Contract Negotiation", "C-Level Engagement", "Public Speaking"],
   },
   {
     category: "Industry",
-    items: "AI/ML Go-to-Market · Retail Media / Commerce Media · Digital Advertising (Programmatic, DSP, Native) · E-commerce Strategy",
+    icon: "🚀",
+    items: ["AI/ML Go-to-Market", "Retail Media / Commerce Media", "Digital Advertising", "Programmatic & DSP", "E-commerce Strategy"],
   },
   {
     category: "Technical",
-    items: "SQL · LLM / Machine Learning Concepts · Product Management (Agile, PRD, UX/UI)",
+    icon: "⚡",
+    items: ["SQL", "LLM / Machine Learning", "Product Management", "Agile & PRD", "UX/UI"],
   },
   {
     category: "Tools",
-    items: "Salesforce / CRM · Google Analytics · JIRA / Confluence · Claude / LLM Tools",
+    icon: "🛠",
+    items: ["Salesforce / CRM", "Google Analytics", "JIRA / Confluence", "Claude / LLM Tools"],
   },
 ];
 
@@ -38,28 +42,47 @@ export default function Skills() {
           <p className="text-blue-400/80 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
             Skills
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-            What I bring<br /><span className="text-neutral-400">to the table.</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+            <span className="text-white">What I bring</span>
+            <br />
+            <span className="text-neutral-400">to the table.</span>
           </h2>
         </motion.div>
 
-        <div className="space-y-0 divide-y divide-white/10">
+        {/* Bento grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {SKILLS.map((skill, i) => (
             <motion.div
               key={skill.category}
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, y: 24, scale: 0.96 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="flex flex-col sm:flex-row gap-2 sm:gap-8 py-6 sm:py-8"
+              whileHover={{ scale: 1.02, y: -4 }}
+              className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 hover:border-blue-400/30 hover:bg-white/[0.06]"
             >
-              <div className="sm:w-48 flex-shrink-0">
-                <span className="text-lg font-bold text-white">
-                  {skill.category}
-                </span>
+              {/* Glow effect on hover */}
+              <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-blue-500/0 blur-3xl transition-all duration-500 group-hover:bg-blue-500/10" />
+              
+              {/* Icon + Category */}
+              <div className="relative flex items-center gap-3 mb-5">
+                <span className="text-2xl">{skill.icon}</span>
+                <h3 className="text-lg font-bold text-white">{skill.category}</h3>
               </div>
-              <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
-                {skill.items}
-              </p>
+
+              {/* Skill pills */}
+              <div className="relative flex flex-wrap gap-2">
+                {skill.items.map((item, j) => (
+                  <motion.span
+                    key={item}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.3, delay: 0.1 * i + 0.05 * j }}
+                    className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-sm text-neutral-300 transition-all duration-300 hover:border-blue-400/40 hover:text-white hover:bg-blue-500/10"
+                  >
+                    {item}
+                  </motion.span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
