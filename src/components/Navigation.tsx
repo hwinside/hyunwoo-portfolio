@@ -35,12 +35,12 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 h-12 flex items-center justify-between">
-          <a
-            href="#"
-            className="text-sm font-semibold text-white/90 hover:text-white transition-colors"
+          <button
+            onClick={toggleLanguage}
+            className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition-all duration-300 border border-white/10"
           >
-            HK
-          </a>
+            {language === "en" ? "KR" : "EN"}
+          </button>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
@@ -53,12 +53,6 @@ export default function Navigation() {
                 {item.label[language]}
               </a>
             ))}
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition-all duration-300 border border-white/10"
-            >
-              {language === "en" ? "KR" : "EN"}
-            </button>
           </div>
 
           {/* Mobile hamburger */}
