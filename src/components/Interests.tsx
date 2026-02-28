@@ -12,7 +12,7 @@ interface Interest {
 }
 
 const INTERESTS: Interest[] = [
-  { title: "Vibe Coding", emoji: "💻", image: "/interests/vibe-coding.jpg" },
+  { title: "Vibe Coding", emoji: "💻", image: "/interests/vibe-coding.jpg", video: "/interests/vibe-coding.mp4" },
   { title: "Bowling", emoji: "🎳", image: "/interests/bowling.jpg", video: "/interests/bowling.mp4" },
   { title: "Playing with my daughter", emoji: "👶", image: "/interests/harin.jpg", video: "/interests/harin.mp4" },
   { title: "Golf", emoji: "⛳", image: "/interests/golf.jpg", video: "/interests/golf.mp4" },
