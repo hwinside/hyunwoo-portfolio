@@ -87,7 +87,7 @@ export default function Interests() {
           className="relative mx-auto max-w-2xl"
         >
           {/* Image container */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-neutral-100 shadow-lg">
+          <div className="relative aspect-[9/16] sm:aspect-[3/4] overflow-hidden rounded-3xl bg-black shadow-lg">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={current}
@@ -106,14 +106,14 @@ export default function Interests() {
                     muted
                     playsInline
                     onEnded={goNext}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                   />
                 ) : (
                   <Image
                     src={interest.image}
                     alt={interest.title}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     sizes="(max-width: 768px) 100vw, 672px"
                     unoptimized
                   />
