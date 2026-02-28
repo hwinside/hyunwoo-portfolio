@@ -70,12 +70,12 @@ export default function Interests() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
+          <p className="text-blue-400/80 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
             Interests
-          </h2>
-          <p className="mt-4 text-lg text-neutral-500">
-            Things that keep me inspired outside of work.
           </p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Things that keep me<br />inspired outside of work.
+          </h2>
         </motion.div>
 
         {/* Carousel */}
