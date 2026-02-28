@@ -27,7 +27,7 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-24 sm:py-32" ref={ref}>
+    <section id="skills" className="py-24 sm:py-32 bg-black" ref={ref}>
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,12 +38,12 @@ export default function Skills() {
           <p className="text-blue-400/80 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
             Skills
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
             What I bring<br />to the table.
           </h2>
         </motion.div>
 
-        <div className="space-y-0 divide-y divide-neutral-200">
+        <div className="space-y-0 divide-y divide-white/10">
           {SKILLS.map((skill, i) => (
             <motion.div
               key={skill.category}
@@ -53,11 +53,11 @@ export default function Skills() {
               className="flex flex-col sm:flex-row gap-2 sm:gap-8 py-6 sm:py-8"
             >
               <div className="sm:w-48 flex-shrink-0">
-                <span className="text-lg font-bold text-neutral-900">
+                <span className="text-lg font-bold text-white">
                   {skill.category}
                 </span>
               </div>
-              <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
                 {skill.items}
               </p>
             </motion.div>
