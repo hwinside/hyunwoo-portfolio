@@ -45,7 +45,7 @@ export default function Skills() {
             Skills
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            {language === "kr" ? (<><span className="text-white">제가 가져오는</span><br /><span className="text-neutral-400">가치와 역량</span></>) : (<><span className="text-white">What I bring</span><br /><span className="text-neutral-400">to the table</span></>)}
+            {language === "kr" ? (<><span className="text-white">제가 실행할 수 있는</span><br /><span className="text-neutral-400">가치와 역량</span></>) : (<><span className="text-white">What I bring</span><br /><span className="text-neutral-400">to the table</span></>)}
           </h2>
         </motion.div>
 
