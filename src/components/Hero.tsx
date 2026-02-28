@@ -12,12 +12,12 @@ export default function Hero() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-black to-indigo-950/40 animate-gradient" />
         {/* Large floating orbs — distinct colors */}
-        <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-blue-500/25 rounded-full blur-[100px] animate-float" />
+        <div className="absolute top-[20%] left-[-10%] w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] sm:left-[10%] bg-blue-500/30 rounded-full blur-[80px] sm:blur-[100px] animate-float" />
         <div
-          className="absolute bottom-[15%] right-[10%] w-[450px] h-[450px] bg-purple-600/25 rounded-full blur-[80px] animate-float-reverse"
+          className="absolute bottom-[20%] right-[-10%] w-[220px] h-[220px] sm:w-[450px] sm:h-[450px] sm:right-[10%] bg-purple-600/30 rounded-full blur-[60px] sm:blur-[80px] animate-float-reverse"
         />
         <div
-          className="absolute top-[20%] right-[15%] w-[350px] h-[350px] bg-emerald-500/20 rounded-full blur-[70px] animate-float"
+          className="absolute top-[50%] left-[30%] w-[200px] h-[200px] sm:w-[350px] sm:h-[350px] sm:top-[20%] sm:right-[15%] sm:left-auto bg-emerald-500/25 rounded-full blur-[60px] sm:blur-[70px] animate-float"
           style={{ animationDelay: "5s" }}
         />
         {/* Center glow behind profile */}
