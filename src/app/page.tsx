@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Content from "@/components/Content";
 import Interests from "@/components/Interests";
@@ -19,6 +20,7 @@ export default function Home() {
         <About />
         <Experience />
         <Content />
+        <Skills />
         <Education />
         <Interests />
         <Contact />
