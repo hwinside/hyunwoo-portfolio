@@ -65,12 +65,12 @@ export default function Education() {
 
             <div className="mt-8 grid sm:grid-cols-2 gap-6">
               <div className="flex gap-4 items-center">
-                <div className="w-24 h-12 rounded-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                <div className="w-16 h-12 rounded-lg overflow-hidden flex items-center justify-center flex-shrink-0">
                   <img src="/logos/sone.jpg" alt="S-ONE" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <p className="text-white font-medium">
-                    {language === "kr" ? "경영전략학회 S-ONE 설립" : "Founded S-ONE"}
+                    {language === "kr" ? "S-ONE 경영전략학회 설립" : "Founded S-ONE"}
                   </p>
                   <p className="text-sm text-white/40 mt-1">
                     {language === "kr" ? "경영 전략 학술 동아리" : "Academic club for business strategy"}
@@ -79,12 +79,12 @@ export default function Education() {
               </div>
 
               <div className="flex gap-4 items-center">
-                <div className="w-24 h-12 rounded-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                <div className="w-16 h-12 rounded-lg overflow-hidden flex items-center justify-center flex-shrink-0">
                   <img src="/logos/aiesec.jpg" alt="AIESEC" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <p className="text-white font-medium">
-                    {language === "kr" ? "AIESEC 성균관대 지부 회장" : "President of AIESEC SKKU"}
+                    {language === "kr" ? "AIESEC SKKU 회장" : "President of AIESEC SKKU"}
                   </p>
                   <p className="text-sm text-white/40 mt-1">
                     {language === "kr" ? "국제 리더십 기구" : "International leadership organization"}
