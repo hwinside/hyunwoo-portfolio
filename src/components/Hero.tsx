@@ -11,18 +11,19 @@ export default function Hero() {
       {/* Animated gradient background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-black to-indigo-950/40 animate-gradient" />
-        {/* Large floating orbs */}
-        <div className="absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[100px] animate-float" />
+        {/* Large floating orbs — distinct colors */}
+        <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-blue-500/25 rounded-full blur-[100px] animate-float" />
         <div
-          className="absolute bottom-1/4 right-1/6 w-[400px] h-[400px] bg-indigo-500/15 rounded-full blur-[80px] animate-float-reverse"
+          className="absolute bottom-[15%] right-[10%] w-[450px] h-[450px] bg-purple-600/25 rounded-full blur-[80px] animate-float-reverse"
         />
         <div
-          className="absolute top-1/3 right-1/3 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[60px] animate-float"
+          className="absolute top-[20%] right-[15%] w-[350px] h-[350px] bg-emerald-500/20 rounded-full blur-[70px] animate-float"
           style={{ animationDelay: "5s" }}
         />
         {/* Center glow behind profile */}
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-500/10 rounded-full blur-[120px] animate-pulse-glow"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full animate-pulse-glow"
+          style={{ background: "radial-gradient(circle, rgba(59,130,246,0.3) 0%, rgba(99,102,241,0.15) 50%, transparent 70%)" }}
         />
         {/* Small orbiting accent */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
