@@ -13,10 +13,13 @@ interface Interest {
 
 const INTERESTS: Interest[] = [
   { title: "Vibe Coding", emoji: "💻", image: "/interests/vibe-coding.jpg" },
-  { title: "Bowling", emoji: "🎳", image: "/interests/bowling.jpg" },
-  { title: "Golf", emoji: "⛳", image: "/interests/golf.jpg" },
-  { title: "Dining", emoji: "🍽️", image: "/interests/dining.jpg" },
-  { title: "Playing with my daughter", emoji: "👶", image: "/interests/harin.jpg" },
+  { title: "Bowling", emoji: "🎳", image: "/interests/bowling.jpg", video: "/interests/bowling.mp4" },
+  { title: "Golf", emoji: "⛳", image: "/interests/golf.jpg", video: "/interests/golf.mp4" },
+  { title: "LG Twins", emoji: "⚾", image: "/interests/lgtwins.jpg", video: "/interests/lgtwins.mp4" },
+  { title: "Golden State Warriors", emoji: "🏀", image: "/interests/warriors.jpg", video: "/interests/warriors.mp4" },
+  { title: "Fred again..", emoji: "🎵", image: "/interests/fredagain.jpg", video: "/interests/fredagain.mp4" },
+  { title: "Dining", emoji: "🍽️", image: "/interests/dining.jpg", video: "/interests/dining.mp4" },
+  { title: "Playing with my daughter", emoji: "👶", image: "/interests/harin.jpg", video: "/interests/harin.mp4" },
 ];
 
 export default function Interests() {
