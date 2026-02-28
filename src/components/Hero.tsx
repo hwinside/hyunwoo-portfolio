@@ -10,15 +10,24 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Animated gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-purple-900/20 animate-gradient" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-black to-indigo-950/40 animate-gradient" />
+        {/* Large floating orbs */}
+        <div className="absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[100px] animate-float" />
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "3s" }}
+          className="absolute bottom-1/4 right-1/6 w-[400px] h-[400px] bg-indigo-500/15 rounded-full blur-[80px] animate-float-reverse"
         />
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-3xl animate-pulse-glow"
+          className="absolute top-1/3 right-1/3 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[60px] animate-float"
+          style={{ animationDelay: "5s" }}
         />
+        {/* Center glow behind profile */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-500/10 rounded-full blur-[120px] animate-pulse-glow"
+        />
+        {/* Small orbiting accent */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="w-3 h-3 bg-blue-400/40 rounded-full blur-sm animate-orbit" />
+        </div>
         {/* Subtle grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.03]"
