@@ -76,7 +76,7 @@ export default function Interests() {
             Interests
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-            Things that keep me<br /><span className="text-neutral-400">inspired outside of work.</span>
+            Things that keep me<br /><span className="text-neutral-400">inspired outside of work</span>
           </h2>
         </motion.div>
 
