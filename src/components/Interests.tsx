@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface Interest {
   title: string;
+  titleKr?: string;
   emoji: string;
   image: string; // /interests/xxx.jpg
   video?: string; // optional video
@@ -21,6 +22,7 @@ const INTERESTS: Interest[] = [
   { title: "LG Twins", emoji: "⚾", image: "/interests/lgtwins.jpg", video: "/interests/lgtwins.mp4" },
   { title: "Dining", emoji: "🍽️", image: "/interests/dining.jpg", video: "/interests/dining.mp4" },
   { title: "Golden State Warriors", emoji: "🏀", image: "/interests/warriors.jpg", video: "/interests/warriors.mp4" },
+  { title: "A Wild Challenge", titleKr: "무모한 도전", emoji: "🔥", image: "/interests/wild-challenge.jpg", video: "/interests/wild-challenge.mp4" },
 ];
 
 export default function Interests() {
@@ -133,7 +135,7 @@ export default function Interests() {
                   >
                     <span className="text-3xl sm:text-4xl mb-2 block">{interest.emoji}</span>
                     <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                      {interest.title}
+                      {language === "kr" && interest.titleKr ? interest.titleKr : interest.title}
                     </h3>
                   </motion.div>
                 </div>
