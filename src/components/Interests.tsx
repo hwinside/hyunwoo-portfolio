@@ -145,18 +145,13 @@ export default function Interests() {
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`group relative flex items-center gap-2 rounded-full px-3 py-1.5 transition-all duration-300 ${
+                className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
                   i === current
-                    ? "bg-neutral-900 text-white"
-                    : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
+                    ? "bg-neutral-900 ring-2 ring-neutral-400 scale-110"
+                    : "bg-neutral-100 hover:bg-neutral-200"
                 }`}
               >
-                <span className="text-sm">{item.emoji}</span>
-                <span className={`text-xs font-medium transition-all duration-300 ${
-                  i === current ? "max-w-[200px] opacity-100" : "max-w-0 opacity-0 overflow-hidden"
-                }`}>
-                  {item.title}
-                </span>
+                <span className="text-lg">{item.emoji}</span>
               </button>
             ))}
           </div>
