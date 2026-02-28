@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 import { motion, useInView } from "framer-motion";
 
 const SKILLS = [
@@ -27,6 +28,7 @@ const SKILLS = [
 ];
 
 export default function Skills() {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -43,9 +45,7 @@ export default function Skills() {
             Skills
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            <span className="text-white">What I bring</span>
-            <br />
-            <span className="text-neutral-400">to the table.</span>
+            {language === "kr" ? (<><span className="text-white">제가 가져오는</span><br /><span className="text-neutral-400">가치와 역량.</span></>) : (<><span className="text-white">What I bring</span><br /><span className="text-neutral-400">to the table.</span></>)}
           </h2>
         </motion.div>
 

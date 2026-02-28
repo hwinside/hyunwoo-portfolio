@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -23,6 +24,7 @@ const INTERESTS: Interest[] = [
 ];
 
 export default function Interests() {
+  const { language } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
