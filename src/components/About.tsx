@@ -26,7 +26,7 @@ export default function About() {
     const timer = setInterval(() => {
       setSlideDir("left");
       setPhotoIndex((prev) => (prev + 1) % aboutPhotos.length);
-    }, 4000);
+    }, 8000);
     return () => clearInterval(timer);
   }, [aboutPhotos.length]);
 
