@@ -103,7 +103,7 @@ export default function About() {
                   key={src}
                   src={src}
                   alt={`Hyunwoo Kim ${i + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
                     i === photoIndex ? "opacity-100" : "opacity-0"
                   }`}
                 />
