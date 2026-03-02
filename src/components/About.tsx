@@ -10,15 +10,16 @@ export default function About() {
   const { language } = useLanguage();
 
   const aboutPhotos = [
-    "/about-photos/about-0.jpg",
-    "/about-photos/about-1.jpg",
-    "/about-photos/about-2.jpg",
-    "/about-photos/about-3.jpg",
-    "/about-photos/about-4.jpg",
-    "/about-photos/about-5.jpg",
-    "/about-photos/about-6.jpg",
+    { src: "/about-photos/about-0.jpg", portrait: false },
+    { src: "/about-photos/about-1.jpg", portrait: true },
+    { src: "/about-photos/about-2.jpg", portrait: false },
+    { src: "/about-photos/about-3.jpg", portrait: false },
+    { src: "/about-photos/about-4.jpg", portrait: true },
+    { src: "/about-photos/about-5.jpg", portrait: false },
+    { src: "/about-photos/about-6.jpg", portrait: false },
   ];
   const [photoIndex, setPhotoIndex] = useState(0);
+  const touchStartX = useRef(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -26,6 +27,17 @@ export default function About() {
     }, 4000);
     return () => clearInterval(timer);
   }, [aboutPhotos.length]);
+
+  function handleTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX;
+  }
+  function handleTouchEnd(e: React.TouchEvent) {
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) setPhotoIndex((prev) => (prev + 1) % aboutPhotos.length);
+      else setPhotoIndex((prev) => (prev - 1 + aboutPhotos.length) % aboutPhotos.length);
+    }
+  }
 
   const stats = language === "kr"
     ? [
@@ -97,13 +109,19 @@ export default function About() {
             </p>
           </div>
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
-              {aboutPhotos.map((src, i) => (
+            <div
+              className={`relative overflow-hidden rounded-2xl transition-all duration-700 ${
+                aboutPhotos[photoIndex].portrait ? "aspect-[3/4] max-w-[85%] mx-auto" : "aspect-[4/3]"
+              }`}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              {aboutPhotos.map((photo, i) => (
                 <img
-                  key={src}
-                  src={src}
+                  key={photo.src}
+                  src={photo.src}
                   alt={`Hyunwoo Kim ${i + 1}`}
-                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                     i === photoIndex ? "opacity-100" : "opacity-0"
                   }`}
                 />
