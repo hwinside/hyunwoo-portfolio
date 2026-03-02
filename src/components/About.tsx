@@ -1,13 +1,31 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { language } = useLanguage();
+
+  const aboutPhotos = [
+    "/about-photos/about-0.jpg",
+    "/about-photos/about-1.jpg",
+    "/about-photos/about-2.jpg",
+    "/about-photos/about-3.jpg",
+    "/about-photos/about-4.jpg",
+    "/about-photos/about-5.jpg",
+    "/about-photos/about-6.jpg",
+  ];
+  const [photoIndex, setPhotoIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPhotoIndex((prev) => (prev + 1) % aboutPhotos.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [aboutPhotos.length]);
 
   const stats = language === "kr"
     ? [
@@ -79,13 +97,30 @@ export default function About() {
             </p>
           </div>
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src="/photos/about.jpg"
-                alt="Hyunwoo Kim speaking at conference"
-                className="w-full object-contain"
-              />
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+              {aboutPhotos.map((src, i) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={`Hyunwoo Kim ${i + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    i === photoIndex ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            </div>
+            {/* Dots */}
+            <div className="flex justify-center gap-1.5 mt-3">
+              {aboutPhotos.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setPhotoIndex(i)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === photoIndex ? "w-5 bg-blue-400" : "w-1.5 bg-white/20"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </motion.div>
