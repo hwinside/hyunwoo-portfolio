@@ -19,10 +19,12 @@ export default function About() {
     { src: "/about-photos/about-6.jpg", portrait: false },
   ];
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [slideDir, setSlideDir] = useState<"left"|"right">("left");
   const touchStartX = useRef(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
+      setSlideDir("left");
       setPhotoIndex((prev) => (prev + 1) % aboutPhotos.length);
     }, 4000);
     return () => clearInterval(timer);
@@ -34,8 +36,13 @@ export default function About() {
   function handleTouchEnd(e: React.TouchEvent) {
     const diff = touchStartX.current - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) {
-      if (diff > 0) setPhotoIndex((prev) => (prev + 1) % aboutPhotos.length);
-      else setPhotoIndex((prev) => (prev - 1 + aboutPhotos.length) % aboutPhotos.length);
+      if (diff > 0) {
+        setSlideDir("left");
+        setPhotoIndex((prev) => (prev + 1) % aboutPhotos.length);
+      } else {
+        setSlideDir("right");
+        setPhotoIndex((prev) => (prev - 1 + aboutPhotos.length) % aboutPhotos.length);
+      }
     }
   }
 
@@ -116,16 +123,26 @@ export default function About() {
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
-              {aboutPhotos.map((photo, i) => (
-                <img
-                  key={photo.src}
-                  src={photo.src}
-                  alt={`Hyunwoo Kim ${i + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                    i === photoIndex ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-              ))}
+              {aboutPhotos.map((photo, i) => {
+                const isActive = i === photoIndex;
+                const offset = i - photoIndex;
+                return (
+                  <div
+                    key={photo.src}
+                    className="absolute inset-0 transition-transform duration-500 ease-out"
+                    style={{
+                      transform: `translateX(${offset * 100}%)`,
+                      ...(Math.abs(offset) > 1 ? { display: "none" } : {}),
+                    }}
+                  >
+                    <img
+                      src={photo.src}
+                      alt={`Hyunwoo Kim ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                );
+              })}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
             {/* Dots */}
