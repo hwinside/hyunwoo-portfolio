@@ -27,6 +27,13 @@ const contents = [
     isVideo: true,
   },
   {
+    title: "[Moloco Event] DMS 2022 - 퍼스트 파티 데이터 시대, 새로운 마케팅 및 비즈니스 기회를 잡아라",
+    type: "Video",
+    thumbnail: "/content/yt4.jpg",
+    url: "https://www.youtube.com/watch?v=-l3gXIF3bPU",
+    isVideo: true,
+  },
+  {
     title: "커머스 빅데이터와 애드테크의 만남 '위메프 AMP' — 몰로코 김현우 이사 인터뷰",
     type: "Article",
     thumbnail: "/content/article1.png",
